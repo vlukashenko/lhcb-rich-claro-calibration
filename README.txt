@@ -27,7 +27,7 @@ Attention! Don't forget to change data:    int offset[n]={}; //values of offsets
 Also, change dir value to switch from board to board or to point to the data directory.
 
 II. calibration.cpp
-Used for: building a calibration curve
+Used for: plotting a calibration curve
 Options: using different transition points calculations. if opt==1 - middle point calculation; if opt==2 - logistic sigmoid fit; if opt==3 - Erf fit.
 
 Attention! there are two hacks for data sample: line 583 and line 566;
@@ -79,7 +79,12 @@ Ouput: "calibration_new.root", "avaraged_results.txt", "file_par.txt".
    		"Name      Attenuation      Offset      slope, ke-      |at zero|, ke-
 		EC0_PMT0_Ch1 ...
 
+ III. noisy.cpp
+ Used for: find noisy channels
+ Options: using different transition points calculations. if opt==1 - middle point calculation; if opt==2 - logistic sigmoid fit; if opt==3 - Erf fit. Use either average chi2 or most probable chi2 for noisy channels cut. By default: 2.5 most probable chi2.
  
+Input: "threshold.txt" from S_curve.cpp
+Ouput: list of noisy channels
 
 
 
